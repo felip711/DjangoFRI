@@ -19,3 +19,13 @@ class producto(models.Model):
     def __str__(self):
         txt = "{0}"
         return txt.format(self.nombre_producto)
+
+class cliente(models.Model):
+    id_cliente = models.AutoField(primary_key=True)
+    nombre_cliente = models.CharField(max_length=100)
+    rut_cliente = models.CharField(max_length=100)
+    email_cliente = models.EmailField(max_length=200)
+
+    def __str__(self):
+        txt = "{0} - {1}"
+        return txt.format(self.nombre_cliente, self.email_cliente)

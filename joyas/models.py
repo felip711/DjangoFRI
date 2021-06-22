@@ -42,4 +42,4 @@ class venta(models.Model):
 
     def __str__(self):
         txt = "{0} - {1} - {2}"
-        return txt.format(self.fecha_venta self.cantidad_venta, self.precio_venta)
+        return txt.format(self.fecha_venta, self.cantidad_venta, self.precio_venta)

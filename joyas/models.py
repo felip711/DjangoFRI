@@ -11,3 +11,11 @@ class tipo_producto(models.Model):
         txt = "{0}"
         return txt.format(self.nombre_tipo_producto)
 
+class producto(models.Model):
+    id_producto = models.AutoField(primary_key=True)
+    nombre_producto = models.CharField(max_length=100)
+    id_tipo_producto = models.ForeignKey(tipo_producto, null=False, default='-', on_delete=models.CASCADE)
+
+    def __str__(self):
+        txt = "{0}"
+        return txt.format(self.nombre_producto)

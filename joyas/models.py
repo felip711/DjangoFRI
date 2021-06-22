@@ -34,7 +34,7 @@ class cliente(models.Model):
 
 class venta(models.Model):
     id_venta = models.AutoField(primary_key=True)
-    fecha_venta = models.DateField(auto_now=True)
+    fecha_venta = models.DateField(auto_now=False)
     id_cliente = models.ForeignKey(cliente, null=False, default='-', on_delete=models.CASCADE)
     id_producto = models.ForeignKey(producto, null=False, default='-', on_delete=models.CASCADE)
     cantidad_venta = models.IntegerField(default=0)

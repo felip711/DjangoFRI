@@ -6,3 +6,4 @@ from joyas.models import *
 admin.site.register(tipo_producto)
 admin.site.register(producto)
 admin.site.register(cliente)
+admin.site.register(venta)

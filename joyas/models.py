@@ -17,6 +17,7 @@ class producto(models.Model):
     id_tipo_producto = models.ForeignKey(tipo_producto, null=False, default='-', on_delete=models.CASCADE)
     cantidad_producto = models.IntegerField(default=0)
     precio = MoneyField(decimal_places=0, verbose_name='Precio Unitario', default=0, default_currency='CLP', max_digits=11)
+    imagen_producto = models.ImageField(_(""), upload_to=None, height_field=None, width_field=None, max_length=None)
 
     def __str__(self):
         txt = "{0}"

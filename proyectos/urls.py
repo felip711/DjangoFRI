@@ -20,5 +20,5 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('productos', include('joyas.urls')),
+    path('productos/', views.productos, name="productos"),
 ]

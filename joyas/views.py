@@ -4,5 +4,4 @@ from django.shortcuts import render
 
 def productos(request):
 
-     context = {}
-     return render(request, 'productos.html', context)
+     return render(request, 'productos.html')

@@ -24,15 +24,11 @@
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                             </tr>
-
-                            {% for i in productos %}
                                 <tr>
-                                    <td>{{i.nombre_producto}}</td>
-                                    <td>{{i.cantidad_producto}}</td>
-                                    <td>{{i.precio}}</td>
-                                </tr>
-                            {% endfor %}
-                            
+                                    <td>{{productos.nombre_producto}}</td>
+                                    <td>{{productos.cantidad_producto}}</td>
+                                    <td>{{productos.precio}}</td>
+                                </tr>                     
                         </table>
                     </div>
                 {% endfor %}

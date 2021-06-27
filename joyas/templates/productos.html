@@ -1,5 +1,5 @@
 <html lang="en">
-    {% load staticfiles %}
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +12,15 @@
 <body>
     <div class="container">
         <div class="row">
-            {% for productos in productos %}
+            {% for i in productos %}
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{ productos.imagen_producto }}" class="card-img-top">
+                    <img src="{{ i.imagen_producto }}" class="card-img-top">
                     <div class="card-title">
-                        {{ productos.nombre_producto }}
+                        {{ i.nombre_producto }}
                     </div>
                     <div>
-                        {{productos.imagen_producto}}
+                        {{i.imagen_producto}}
                     </div>
                 </div>                
             </div>

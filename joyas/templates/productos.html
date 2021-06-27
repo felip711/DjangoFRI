@@ -1,5 +1,5 @@
 <html lang="en">
-    {% load static/imagenes/productos %}
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
             {% for productos in productos %}
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{ productos.imagen_producto }}" class="card-img-top">
+                    <img src="{{ /imagenes/productos/productos.imagen_producto }}" class="card-img-top">
                     <div class="card-title">
                         {{ productos.nombre_producto }}
                     </div>

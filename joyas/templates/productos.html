@@ -10,36 +10,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 <body>
-<div>
-{% csrf_token %}
-        <div class="row">
-            <div class="col-md">
-                <div class="card card-body">
-                    <h5>Listado de Productos</h5>
-                </div>
-                <div class="card card-body">
-                    <table class="table">
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                        </tr>
-
-                        {% for i in Productos %}
+    <div class="container">
+            <div class="row">
+                <div class="col-md">
+                {% for productos in productos %}
+                    <div class="card card-body">
+                        <h5>Listado de Productos</h5>
+                    </div>
+                    <div class="card card-body">
+                        <table class="table">
                             <tr>
-                                <td>{{i.nombre_producto}}</td>
-                                <td>{{i.cantidad_producto}}</td>
-                                <td>{{i.precio}}</td>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
                             </tr>
-                        {% endfor %}
-                        
-                    </table>
+
+                            {% for i in productos %}
+                                <tr>
+                                    <td>{{i.nombre_producto}}</td>
+                                    <td>{{i.cantidad_producto}}</td>
+                                    <td>{{i.precio}}</td>
+                                </tr>
+                            {% endfor %}
+                            
+                        </table>
+                    </div>
                 </div>
+                {% for message in messages %}
+            <p id="messages">{{message}}</p>
+            {% endfor %}
             </div>
-            {% for message in messages %}
-          <p id="messages">{{message}}</p>
-        {% endfor %}
-        </div>
-</div>
+    </div>
 </body>
 </html>

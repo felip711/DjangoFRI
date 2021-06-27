@@ -4,4 +4,4 @@ from . import views
 
 urlpatterns = [
     path('productos/',views.productos,name='productos'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -13,7 +13,7 @@
     <div class="container">
             <div class="row">
                 <div class="col-md">
-                {% for productos in productos %}
+                
                     <div class="card card-body">
                         <h5>Listado de Productos</h5>
                     </div>
@@ -24,14 +24,16 @@
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                             </tr>
+                                {% for productos in productos %}
                                 <tr>
                                     <td>{{productos.nombre_producto}}</td>
                                     <td>{{productos.cantidad_producto}}</td>
                                     <td>{{productos.precio}}</td>
-                                </tr>                     
+                                </tr>   
+                                {% endfor %}                  
                         </table>
                     </div>
-                {% endfor %}
+                
                 </div>
                 {% for message in messages %}
             <p id="messages">{{message}}</p>

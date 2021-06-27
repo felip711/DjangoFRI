@@ -11,34 +11,21 @@
 </head>
 <body>
     <div class="container">
-            <div class="row">
-                <div class="col-md">
-                
-                    <div class="card card-body">
-                        <h5>Listado de Productos</h5>
+        <div class="row">
+            {% for productos in productos %}
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="" class="card-img-top">
+                    <div class="card-title">
+                        {{ productos.nombre_producto }}
                     </div>
-                    <div class="card card-body">
-                        <table class="table">
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                            </tr>
-                                {% for productos in productos %}
-                                <tr>
-                                    <td>{{productos.nombre_producto}}</td>
-                                    <td>{{productos.cantidad_producto}}</td>
-                                    <td>{{productos.precio}}</td>
-                                </tr>   
-                                {% endfor %}                  
-                        </table>
+                    <div>
+                        {{productos.precio}}
                     </div>
-                
-                </div>
-                {% for message in messages %}
-            <p id="messages">{{message}}</p>
-            {% endfor %}
+                </div>                
             </div>
+            {% endfor %} 
+        </div>
     </div>
 </body>
 </html>

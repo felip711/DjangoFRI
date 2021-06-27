@@ -15,7 +15,7 @@
             {% for i in productos %}
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{ i.imagen_producto }}" class="card-img-top">
+                    <img src="{% static 'i.imagen_producto' %}" class="card-img-top">
                     <div class="card-title">
                         {{ i.nombre_producto }}
                     </div>

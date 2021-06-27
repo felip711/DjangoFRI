@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 
 def productos(request):
-     producto = producto.objects.all()
-     return render(request, 'productos.html', {'producto':producto})
+     productos = producto.objects.all()
+     return render(request, 'productos.html', {'productos':productos})

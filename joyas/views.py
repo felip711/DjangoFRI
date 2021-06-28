@@ -6,7 +6,7 @@ from .models import *
 def productos(request):
      productos = producto.objects.all()
 
-     item_name = request.GET.get('item_name')
-     if item_name != '' and item_name is not None:
-          productos = productos.filter(nombre_producto__contains=item_name)
+     nombre_producto = request.GET.get('nombre_producto')
+     if nombre_producto != '' and nombre_producto is not None:
+          productos = productos.filter(nombre_producto__contains=nombre_producto)
      return render(request, 'productos.html', {'productos':productos})

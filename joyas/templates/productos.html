@@ -13,6 +13,20 @@
 <body>
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <div class="card-card-sm">
+                    <div class="card-body row no-gytthers align-items-center">
+                        <div class="col">
+                            <input type="search" name="item_name" placeholder="Buscador Productos" class="form-control form-control-borderless">
+                        </div>
+                        <div>
+                            <button class="btn btn-succes" type="submit">Buscador</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             {% for i in productos %}
             <div class="col-md-3">
                 <div class="card">

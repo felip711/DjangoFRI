@@ -8,5 +8,5 @@ def productos(request):
 
      item_name = request.GET.get('item_name')
      if item_name != '' and item_name is not None:
-          productos = productos.filter(title_icontains=item_name)
+          productos = productos.filter(title__icontains=item_name)
      return render(request, 'productos.html', {'productos':productos})

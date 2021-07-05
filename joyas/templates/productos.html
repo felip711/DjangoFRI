@@ -31,11 +31,15 @@
             <div class="col-md-3">
                 <div class="card">
                     <img src="{% static i.imagen_producto.url %}" class="card-img-top">
-                    <div class="card-title">
-                        {{ i.nombre_producto }}
-                    </div>
-                    <div class="card-text">
-                        {{i.precio}}
+                    <div class="card-body">
+                        <div class="card-title">
+                            {{ i.nombre_producto }}
+                        </div>
+                        <div class="card-text">
+                            {{i.precio}}
+                        </div>
+                        <button class="btn btn-warning">Ver</button>
+                        <button class="btn btn-warning">Agregar al carro</button>
                     </div>
                 </div>                
             </div>

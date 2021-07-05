@@ -46,15 +46,15 @@
                 <ul class="pagination">
                     {% if productos.has_previous %}
                         <li class="page-item">
-                            <a href="?page={{ productos.previous_page_number }}">Previa</a>
+                            <a class="page-link" href="?page={{ productos.previous_page_number }}">Previa</a>
                         </li>
                     {% endif %}
                     <li class="page-item">
-                        <a href="?page={{ productos.number }}">Actual</a>
+                        <a class="page-link" href="?page={{ productos.number }}">Actual</a>
                     </li>
                     {% if productos.has_next %}
                         <li class="page-item">
-                            <a href="?page={{ productos.next_page_number }}">Siguiente</a>
+                            <a class="page-link" href="?page={{ productos.next_page_number }}">Siguiente</a>
                         </li>
                     {% endif %}
                 </ul>

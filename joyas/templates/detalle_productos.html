@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="{{ productos.imagen_producto }}" alt="">
+                        <img src="{% static i.imagen_producto.url %}" alt="">
                     </div>
                 </div>
             </div>

@@ -20,5 +20,5 @@ def productos(request):
      return render(request, 'productos.html', {'productos':productos})
 
 def detalle_productos(request,id):
-     productos = producto.objects.get(id=id)
+     productos = producto.objects.get(id_producto=id)
      return render(request, 'detalle_productos.html', {'productos':productos})

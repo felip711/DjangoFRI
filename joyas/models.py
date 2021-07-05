@@ -41,7 +41,14 @@ class venta(models.Model):
     id_producto = models.ForeignKey(producto, null=False, default='-', on_delete=models.CASCADE)
     cantidad_venta = models.IntegerField(default=0)
     precio_venta = MoneyField(decimal_places=0, verbose_name='Monto Venta', default=0, default_currency='CLP', max_digits=11)
+    venta_producto = models.ManyToManyField(producto, through='detalle_venta')
 
     def __str__(self):
         txt = "{0} - {1} - {2}"
         return txt.format(self.fecha_venta, self.cantidad_venta, self.precio_venta)
+
+class detalle_venta(models.Model):
+    id_detalle_venta = models.AutoField(primary_key=True)
+    id_venta = models.ForeignKey(venta, null=True, on_delete=models.CASCADE)
+    id_producto = models.ForeignKey(producto, null=True, on_delete=models.CASCADE)
+    

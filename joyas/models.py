@@ -42,8 +42,8 @@ class venta(models.Model):
     venta_producto = models.ManyToManyField(producto, through='detalle_venta')
 
     def __str__(self):
-        txt = "{0} - {1} - {2} - {3}"
-        return txt.format(self.id_venta, self.fecha_venta, self.cantidad_venta, self.precio_venta)
+        txt = "{0} - {1} - {2}"
+        return txt.format(self.id_venta, self.fecha_venta, self.precio_venta)
 
 class detalle_venta(models.Model):
     id_detalle_venta = models.AutoField(primary_key=True)

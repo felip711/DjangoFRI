@@ -50,4 +50,27 @@ class detalle_venta(models.Model):
     id_venta = models.ForeignKey(venta, null=True, on_delete=models.CASCADE)
     cantidad_venta = models.IntegerField(default=0)
     id_producto = models.ForeignKey(producto, null=True, on_delete=models.CASCADE)
-    
+
+    def __str__(self):
+        txt = "{0} - {1}"
+        return txt.format(self.id_venta, self.id_producto)
+
+class pedido(models.Model):
+    id_pedido = models.AutoField(primary_key=True)
+    fecha_pedido = models.DateField(auto_now=False)
+    pedido_producto = models.ManyToManyField(producto, through='detalle_pedido')
+
+    def __str__(self):
+        txt = "{0} - {1}"
+        return txt.format(self.id_pedido, self.fecha_pedido)
+
+class detalle_pedido(models.Model):
+    id_detalle_pedido = models.AutoField(primary_key=True)
+    id_pedido = models.ForeignKey(pedido, null=True, on_delete=models.CASCADE)
+    cantidad_pedido = models.IntegerField(default=0)
+    precio_pedido = MoneyField(decimal_places=0, verbose_name='Monto Compra', default=0, default_currency='CLP', max_digits=11)
+    id_producto = models.ForeignKey(producto, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        txt = "{0} - {1}"
+        return txt.format(self.id_pedido, self.id_producto)

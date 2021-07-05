@@ -18,3 +18,7 @@ def productos(request):
      productos = paginador.get_page(pagina)
 
      return render(request, 'productos.html', {'productos':productos})
+
+def detalle_productos(request,id):
+     productos = productos.objects.get(id=id)
+     return render(request, 'detalle_productos.html', {'productos':productos})

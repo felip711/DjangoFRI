@@ -38,7 +38,6 @@ class venta(models.Model):
     id_venta = models.AutoField(primary_key=True)
     fecha_venta = models.DateField(auto_now=False)
     id_cliente = models.ForeignKey(cliente, null=False, default='-', on_delete=models.CASCADE)
-    cantidad_venta = models.IntegerField(default=0)
     precio_venta = MoneyField(decimal_places=0, verbose_name='Monto Venta', default=0, default_currency='CLP', max_digits=11)
     venta_producto = models.ManyToManyField(producto, through='detalle_venta')
 
@@ -49,5 +48,6 @@ class venta(models.Model):
 class detalle_venta(models.Model):
     id_detalle_venta = models.AutoField(primary_key=True)
     id_venta = models.ForeignKey(venta, null=True, on_delete=models.CASCADE)
+    cantidad_venta = models.IntegerField(default=0)
     id_producto = models.ForeignKey(producto, null=True, on_delete=models.CASCADE)
     

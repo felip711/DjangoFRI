@@ -44,7 +44,7 @@
                             {{i.precio}}
                         </div>
                         <a href="/{{ i.id_producto }}" class="btn btn-warning">Ver</a>
-                        <a class="btn btn-warning">Agregar al carro</a>
+                        <button class="btn atc btn-warning">Agregar al carro</button>
                     </div>
                 </div>                
             </div>
@@ -77,5 +77,10 @@
     if(localStorage.getItem('cart')==null){
         var cart = {};
     }
+
+    $(document).on('click','.atc',function(){
+        console.log("Se hizo click en agregar producto");
+    });
+
 </script>
 </html>
